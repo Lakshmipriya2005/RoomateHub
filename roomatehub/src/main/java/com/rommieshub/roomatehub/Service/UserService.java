@@ -49,6 +49,7 @@ public class UserService {
         user.setUsername(dto.getUsername());
         user.setMobileNumber(dto.getMobileNumber());
         user.setAge(dto.getAge());
+        user.setRole("admin");
         userRepository.save(user);
 
        UserEntity usr=userRepository.findByUsername(dto.getUsername());
