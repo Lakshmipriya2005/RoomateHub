@@ -41,7 +41,9 @@ public class SecurityConfig {
         return http.csrf(customizer -> customizer.disable()).
         cors(Customizer.withDefaults()).
                 authorizeHttpRequests(request -> request
-                        .requestMatchers("/auth/**").permitAll()
+                        .requestMatchers("/user/**","/admin/**").
+            
+                        permitAll()
                         .anyRequest().authenticated()).
                 httpBasic(customizer->customizer.disable()).
                 sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

@@ -27,5 +27,6 @@ public class UserEntity {
     @Column(unique=true)
     private String email;
     private long mobileNumber;
-    private int age;    
+    private int age;   
+    private String role; 
 }
